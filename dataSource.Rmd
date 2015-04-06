@@ -1,0 +1,56 @@
+---
+title: "Data Source - Bike Sharing"
+author: "Stephen D. Wells"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+The data for this project was generously donated by Hadi Fanaee Tork as a csv file.  The original data was collected from Capital
+Bikeshare which delivers their data in XML format.  Please visit their site at [http://www.capitalbikeshare.com/system-data] to 
+review the original source or [https://www.kaggle.com/c/bike-sharing-demand] to review the tidy data we use in this project.
+
+## Location
+
+Overview of the data source is found at:
+
+https://www.kaggle.com/c/bike-sharing-demand/data
+
+A direct link to the data can be retrieved from:
+
+https://www.kaggle.com/c/bike-sharing-demand/download/train.csv
+
+## Usage
+
+bikeSharing <- read.csv("train.csv")
+
+## Format
+
+A data frame with 10,886 observations of 12 variables
+
+## Details
+
+* **datetime** - hourly date + timestamp
+* **season**
+    1. **Spring**
+    2. **Summer**
+    3. **Fall**
+    4. **Winter**
+* **holiday** - whether the day is a holiday
+* **workinday** - whether the day is neither a weekend nor holiday
+* **weather**
+    1. **Clear**, Few clouds, Party cloudy
+    2. **Mist** + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist
+    3. Light Snow, Light **Rain** + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds
+    4. **Heavy Rain** + Ice Pellets + Thunderstorm + Mist, Snow + Fog
+* **temp** - temperature in Celsius
+* **atemp** - "feels like" temperature in Celsius
+* **humidity** - relative humidity
+* **windspeed** - wind speed
+* **casual** - number of non-registered user rentals initiated
+* **registered** - number of registered user rentals initiated
+* **count** - number of total rentals
+  
